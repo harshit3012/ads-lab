@@ -27,7 +27,7 @@ Node *mergeBinomialTrees(Node *b1, Node *b2) {
     return b1;
 }
 
-list<Node *> unionBionomialHeap(list<Node *> l1, list<Node *> l2) {
+list<Node *> unionBinomialHeap(list<Node *> l1, list<Node *> l2) {
     list<Node *> _new;
     list<Node *>::iterator it = l1.begin();
     list<Node *>::iterator ot = l2.begin();
@@ -95,7 +95,7 @@ list<Node *> adjust(list<Node *> _heap) {
 list<Node *> insertATreeInHeap(list<Node *> _heap, Node *tree) {
     list<Node *> temp;
     temp.push_back(tree);
-    temp = unionBionomialHeap(_heap, temp);
+    temp = unionBinomialHeap(_heap, temp);
     return adjust(temp);
 }
 
@@ -140,7 +140,7 @@ list<Node *> extractMin(list<Node *> _heap) {
         it++;
     }
     lo = removeMinFromTreeReturnBHeap(temp);
-    new_heap = unionBionomialHeap(new_heap, lo);
+    new_heap = unionBinomialHeap(new_heap, lo);
     new_heap = adjust(new_heap);
     return new_heap;
 }
